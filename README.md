@@ -8,6 +8,8 @@ aws cloudformation create-stack --stack-name UdagramNetwork --template-body file
 
 aws cloudformation create-stack --stack-name UdagramInfra --template-body file://Udagram-Infra-v2.yml  --parameters file://Udagram-Infra.json --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" --region=us-east-1
 
+a live working example of this project is currently available : http://Udagr-WebAp-OZD154FU7I63-1087656234.us-east-1.elb.amazonaws.com
+
 
 -- Optional , if you wish to troubleshoot your Instances, you may create a Jump host and login to instances in private subnets. But i requires some changes like KeyPairs for security reasons. You may also required to add KeyPairs names in Udagram-Infra-v2.yml file in section or line 66 (add new Line) and write KeyName: <your key name>
 aws cloudformation create-stack --stack-name UdagramBastian --template-body file://Udagram-Bastian.yml  --parameters file://Udagram-Bastian.json --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" --region=us-east-1
